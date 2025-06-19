@@ -5,52 +5,96 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap CSS from CDN -->
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   
-  <!-- Optional Bootstrap theme -->
+  <!-- Optional Bootstrap Theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
   
-  <!-- Bootstrap JS (for future JS components like dropdowns) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
+  <!-- Moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+
+  <!-- Bootstrap JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <!-- jQuery (already needed by Bootstrap) -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-<!-- Another JS Library: Moment.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-
+  <style>
+    body {
+      padding-top: 20px;
+    }
+    .section-title {
+      margin-top: 40px;
+    }
+    #email {
+      color: blue;
+      cursor: pointer;
+    }
+  </style>
 </head>
-
 <body>
 
   <div class="container">
     <div class="jumbotron text-center">
       <h1>Syed Abdul Mannan</h1>
-      <p>Web Developer | Portfolio</p>
+      <p>Web Developer | Front-End Enthusiast</p>
     </div>
 
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <h3>About Me</h3>
-        <p>Recent Computer Science graduate passionate about building responsive websites using HTML, CSS, JS, and Bootstrap.</p>
+        <p>I am a Computer Science graduate with a passion for building responsive, interactive web applications using HTML, CSS, JavaScript, and Bootstrap.</p>
       </div>
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <h3>Skills</h3>
         <ul>
           <li>HTML, CSS, Bootstrap</li>
-          <li>JavaScript, React</li>
-          <li>Git, MySQL</li>
+          <li>JavaScript, jQuery, ReactJS</li>
+          <li>MySQL, Git, PHP</li>
         </ul>
       </div>
     </div>
 
-    <hr>
+    <div class="section-title">
+      <h3>Interactive Features</h3>
+      <p>⏰ Current Time: <span id="clock"></span></p>
+      <p>📅 Today's Date: <span id="today"></span></p>
+      <p id="email" onclick="showhideEmail()">📧 Show Email</p>
+    </div>
 
-    <div class="text-center">
-      <p>Contact: <a href="mailto:syeda45@email.com">syeda45@email.com</a> | GitHub: <a href="https://github.com/syedmannan22" target="_blank">syedmannan22</a></p>
+    <div class="text-center section-title">
+      <p>GitHub: <a href="https://github.com/syedmannan22" target="_blank">syedmannan22</a></p>
+      <p>Email: syed@example.com</p>
     </div>
   </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Digital Clock
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("clock").innerText = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+
+    // Show/Hide Email
+    var shown = false;
+    function showhideEmail() {
+      if (shown) {
+        document.getElementById('email').innerHTML = "📧 Show Email";
+        shown = false;
+      } else {
+        document.getElementById('email').innerHTML = "<a href='mailto:syed@example.com'>syed@example.com</a>";
+        shown = true;
+      }
+    }
+
+    // Display current date using Moment.js
+    $(document).ready(function () {
+      $('#today').text(moment().format('MMMM Do YYYY'));
+    });
+  </script>
 
 </body>
 </html>
