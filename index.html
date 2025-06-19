@@ -7,30 +7,17 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  
-  <!-- Optional Bootstrap Theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
   
-  <!-- jQuery -->
+  <!-- jQuery & Moment.js -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  
-  <!-- Moment.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-
-  <!-- Bootstrap JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <style>
-    body {
-      padding-top: 20px;
-    }
-    .section-title {
-      margin-top: 40px;
-    }
-    #email {
-      color: blue;
-      cursor: pointer;
-    }
+    body { padding-top: 20px; }
+    .section-title { margin-top: 40px; }
+    #email { color: blue; cursor: pointer; }
   </style>
 </head>
 <body>
@@ -38,13 +25,15 @@
   <div class="container">
     <div class="jumbotron text-center">
       <h1>Syed Abdul Mannan</h1>
-      <p>Web Developer | Front-End Enthusiast</p>
+      <p>Web Developer | Portfolio</p>
     </div>
+
+    <div id="welcomeMsg" class="alert alert-info text-center"></div>
 
     <div class="row">
       <div class="col-md-6">
         <h3>About Me</h3>
-        <p>I am a Computer Science graduate with a passion for building responsive, interactive web applications using HTML, CSS, JavaScript, and Bootstrap.</p>
+        <p>I am a Computer Science graduate focused on building responsive websites using HTML, CSS, JavaScript, and APIs.</p>
       </div>
       <div class="col-md-6">
         <h3>Skills</h3>
@@ -63,13 +52,24 @@
       <p id="email" onclick="showhideEmail()">📧 Show Email</p>
     </div>
 
+    <div class="section-title">
+      <h3>😂 Joke of the Minute</h3>
+      <p id="jokeText">Loading joke...</p>
+    </div>
+
+    <div class="section-title">
+      <h3>🎨 XKCD Comic</h3>
+      <p id="comicTitle"></p>
+      <img id="comicImg" class="img-responsive" alt="XKCD Comic">
+    </div>
+
     <div class="text-center section-title">
       <p>GitHub: <a href="https://github.com/syedmannan22" target="_blank">syedmannan22</a></p>
-      <p>Email: syeda45d@example.com</p>
+      <p>Email: syeda45@udayton.edu</p>
     </div>
   </div>
 
-  <!-- JavaScript -->
+  <!-- JavaScript Logic -->
   <script>
     // Digital Clock
     function updateClock() {
@@ -85,15 +85,56 @@
         document.getElementById('email').innerHTML = "📧 Show Email";
         shown = false;
       } else {
-        document.getElementById('email').innerHTML = "<a href='mailto:syeda45@example.com'>syeda45@example.com</a>";
+        document.getElementById('email').innerHTML = "<a href='mailto:syeda45@udayton.edu'>syeda45@udayton.edu</a>";
         shown = true;
       }
     }
 
-    // Display current date using Moment.js
+    // Display Current Date
     $(document).ready(function () {
       $('#today').text(moment().format('MMMM Do YYYY'));
     });
+
+    // JokeAPI Integration
+    function fetchJoke() {
+      fetch("https://v2.jokeapi.dev/joke/Any")
+        .then(res => res.json())
+        .then(data => {
+          let joke = data.type === "single" ? data.joke : `${data.setup} - ${data.delivery}`;
+          $('#jokeText').text(joke);
+        });
+    }
+    fetchJoke();
+    setInterval(fetchJoke, 60000); // every 1 minute
+
+    // XKCD Comic API Integration
+    fetch("https://xkcd.com/info.0.json")
+      .then(res => res.json())
+      .then(data => {
+        $('#comicTitle').text(data.title);
+        $('#comicImg').attr("src", data.img);
+      });
+
+    // Cookie: Welcome or Welcome Back
+    const welcomeDiv = document.getElementById("welcomeMsg");
+    const lastVisit = getCookie("lastVisit");
+    const now = new Date().toString();
+    if (!lastVisit) {
+      welcomeDiv.innerText = "Welcome to my homepage!";
+    } else {
+      welcomeDiv.innerText = "Welcome back! Your last visit was " + lastVisit;
+    }
+    document.cookie = "lastVisit=" + now;
+
+    // Cookie Helper
+    function getCookie(name) {
+      let cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        let c = cookies[i].trim();
+        if (c.indexOf(name + "=") === 0) return c.substring(name.length + 1);
+      }
+      return "";
+    }
   </script>
 
 </body>
