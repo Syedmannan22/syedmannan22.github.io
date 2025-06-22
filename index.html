@@ -253,7 +253,15 @@
             color: #721c24;
             font-style: normal;
         }
+#quote-box {
+  font-size: 1.1rem;
+  color: #444;
+}
 
+#quote-author {
+  font-size: 0.95rem;
+  color: #555;
+}
          
     </style>
 </head>
@@ -378,6 +386,14 @@
                         </div>
                     </div>
                 </div>
+
+            <div class="col-md-6">
+              <div class="card joke">
+                <h5>💬 Quote of the Day</h5>
+                <p id="quote-box" class="fst-italic">Fetching quote...</p>
+                <p id="quote-author" class="fw-bold text-end"></p>
+              </div>
+            </div>
             </div> -->
 
 
@@ -883,6 +899,22 @@
                 }
             }
         }); // End of document.ready
+
+        function fetchQuote() {
+  fetch("https://api.quotable.io/random")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("quote-box").innerText = `"${data.content}"`;
+      document.getElementById("quote-author").innerText = `– ${data.author}`;
+    })
+    .catch(() => {
+      document.getElementById("quote-box").innerText = "Unable to load quote.";
+      document.getElementById("quote-author").innerText = "";
+    });
+}
+
+fetchQuote(); // On load
+setInterval(fetchQuote, 60000); // Refresh every minute
     </script>
 </body>
 
