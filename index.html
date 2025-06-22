@@ -488,7 +488,7 @@
                         <li class="nav-item"><a class="nav-link" href="#api-integration">API Integrations</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                         <!-- Link to the WAPH Course Page -->
-                        <li class="nav-item"><a class="nav-link" href="waph_course.html" target="_blank">WAPH Course</a>
+                        <li class="nav-item"><a class="nav-link" href="waph.html" target="_blank">WAPH Course</a>
                         </li>
                     </ul>
                 </div>
@@ -957,17 +957,17 @@
                     apiUrl = `http://numbersapi.com/${randomNumber}/${factType}`;
                 }
 
-                $.ajax({
-                    url: apiUrl,
-                    method: 'GET',
-                    success: function (data) {
-                        numberFactDisplay.html(`<p class="mb-0 fs-5">${data}</p>`);
-                    },
-                    error: function (jqXHR, textStatus, errorThrown) {
-                        console.error('Error fetching number fact:', jqXHR);
-                        numberFactDisplay.html('<p class="text-danger">Failed to load a number fact. Please try again later.</p>');
-                    }
-                });
+               $.ajax({
+    url: 'https://uselessfacts.jsph.pl/api/v2/facts/random?language=en',
+    method: 'GET',
+    success: function (data) {
+        numberFactDisplay.html(`<p class="mb-0 fs-5">${data.text}</p>`);
+    },
+    error: function () {
+        numberFactDisplay.html('<p class="text-danger">Failed to load a fact. Please try again later.</p>');
+    }
+});
+
             }
             fetchNumberFact(); // Fetch a fact immediately on page load
 
