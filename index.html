@@ -23,9 +23,76 @@
         rel="stylesheet">
 
     <style>
-        section {
-            padding: 60px 0px;
+        /* General Reset and Base */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f9fafb;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
+
+        section {
+            padding: 70px 0px;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        /* Header & Navbar */
+        /* .header_section {
+            box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+            background-color: #fff;
+            z-index: 1030;
+        } */
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #2c3e50 !important;
+            letter-spacing: 1.2px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #0056b3 !important;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: #555;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 10px 15px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar-light .navbar-nav .nav-link:focus,
+        .navbar-light .navbar-nav .nav-link.active {
+            color: #0056b3;
+            background-color: #e9f2ff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+        }
+
+        /* Navbar toggler */
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 5px #0056b3;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
 
         .mainHomeCard {
             border-radius: 20px;
@@ -52,36 +119,176 @@
             object-fit: cover;
         }
 
+
+        /* Home Section Card */
+        /* .mainHomeCard {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .mainHomeCard:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        } */
+
+        /* Profile Image */
+        /* .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #0056b3;
+            transition: transform 0.3s ease;
+        } */
+
+        /* .profile-image:hover {
+            transform: scale(1.05);
+        } */
+
+        /* Headings */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Segoe UI Semibold', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            /* border-bottom: 3px solid #0056b3; */
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: #0056b3;
+            margin-bottom: 1rem;
+        }
+
+        /* Paragraphs */
+        p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Cards in sections (API cards, skills, experience) */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
+            transition: box-shadow 0.3s ease;
+            background: #fff;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Lists inside cards */
+        ul {
+            padding-left: 1.2rem;
+            color: #444;
+            font-size: 1rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* API Cards */
+        .apiCards h3 {
+            color: #0056b3;
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background-color: #0056b3;
+            border: none;
+            padding: 0.55rem 1.8rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.5);
+        }
+
+        /* Icon Link Styles */
+        .icon-link {
+            font-size: 1.6rem;
+            color: #555;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .icon-link:hover {
+            color: #0056b3;
+        }
+
+        /* Welcome Message */
         .welcomeMessage {
-            background-color: #415161;
-            padding: 10px 20px;
+            font-style: italic;
+            color: #0056b3;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        /* AI Assistant Section */
+        #blurb-input {
+            resize: none;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+            border: 1.5px solid #0056b3;
+            font-size: 1.1rem;
+            padding: 15px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        #blurb-input:focus {
+            outline: none;
+            box-shadow: 0 0 10px #0056b3;
+        }
+
+        /* Spinner & Output */
+        #blurb-spinner {
+            margin-top: 1rem;
+        }
+
+        #blurb-output p {
+            font-size: 1.15rem;
+            color: #444;
+            min-height: 80px;
+            padding: 10px 15px;
+            background: #f0f4ff;
             border-radius: 10px;
-            color: #ffffff;
+            box-shadow: inset 0 0 5px rgba(0, 123, 255, 0.1);
         }
 
 
+        /* Clocks Section */
 
-
-
-
-
-
-
-
-
-        #digitalClock {
-            font-family: 'Share Tech Mono', monospace;
-            /* Monospace font for digital clock */
-            font-size: 2.5rem;
-            padding: 20px;
-            background-color: #415161;
-            color: #ffffff;
-            /* Greenish display */
-            border-radius: 10px;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            letter-spacing: 2px;
-            margin-top: 1rem;
+        #analogClockContainer {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            margin: 0 auto;
+            border: 12px solid #0056b3;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.25);
         }
 
         #analogClockContainer {
@@ -114,7 +321,7 @@
             height: 35%;
             margin-left: -2px;
             /* Center horizontally */
-            background-color: #007bff;
+            background-color: #0056b3;
         }
 
         .minute-hand {
@@ -145,116 +352,130 @@
             z-index: 10;
         }
 
-        /* API Disclaimer Styling */
-        .api-disclaimer {
-            background-color: #fff3cd;
-            border-color: #ffeeba;
-            color: #856404;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
+        /* Contact Section */
+        #contact p.lead {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #0056b3;
+        }
+
+        #toggleEmail {
+            transition: background-color 0.3s ease;
+        }
+
+        #toggleEmail:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+        /* Email display */
+        #myEmail {
+            font-weight: 600;
+            color: #2c3e50;
         }
 
         /* Back to Top Button */
         #backToTopBtn {
-            display: none;
-            /* Hidden by default */
             position: fixed;
-            /* Fixed position */
-            bottom: 20px;
-            /* Place at the bottom */
+            bottom: 30px;
             right: 30px;
-            /* Place at the right */
-            z-index: 99;
-            /* Ensure it's on top */
+            background-color: #0056b3;
+            color: #fff;
             border: none;
-            /* Remove borders */
-            outline: none;
-            /* Remove outline */
-            background-color: #007bff;
-            /* Blue background */
-            color: white;
-            /* White text */
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 22px;
             cursor: pointer;
-            /* Add a mouse pointer on hover */
-            padding: 15px;
-            /* Some padding */
-            border-radius: 10px;
-            /* Rounded corners */
-            font-size: 1.2rem;
-            /* Increase font size */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.5);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: none;
+            /* hidden by default */
+            z-index: 1100;
         }
 
         #backToTopBtn:hover {
             background-color: #0056b3;
-            /* Darker blue on hover */
-            transform: translateY(-2px);
+            transform: scale(1.1);
         }
 
-        /* Page Tracker Placeholder */
-        .footer-tracker {
-            margin-top: 15px;
+
+        
+
+
+
+        .footer {
+            /* background: #212529; */
+            /* Bootstrap dark shade */
+        }
+
+        .footer h2,
+        .footer h5 {
+            font-weight: 600;
+        }
+
+        .footer .btn {
+            border-radius: 50px;
+        }
+
+        .footer-button {
+            background-color: transparent;
+            border: 1px solid #0056b3;
+            color: #0056b3;
+            padding: 8px 20px;
+            transition: color 0.3s ease;
+        }
+
+        
+        .footer .btn:hover {
+            background-color: #0d6efd;
+            color: #fff;
+        }
+
+
+
+        /* Responsive Improvements */
+        @media (max-width: 991px) {
+            .mainHomeCard {
+                margin-bottom: 2rem;
+            }
+            
+            #digitalClock {
+            font-family: 'Share Tech Mono', monospace;
+            /* Monospace font for digital clock */
+            font-size: 2.5rem;
+            padding: 20px;
+            background-color: #415161;
+            color: #ffffff;
+            /* Greenish display */
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
             text-align: center;
+            letter-spacing: 2px;
+            margin-top: 1rem;
+        }!important
+
         }
 
-        /* Spinner styling */
-        .spinner-border {
-            width: 1.5rem;
-            height: 1.5rem;
-        }
+        @media (max-width: 576px) {
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
 
-        /* AI Assistant specific styles */
-        #ai-assistant .form-control {
-            border-radius: 0.5rem;
-            border: 1px solid #ced4da;
-            padding: 1rem;
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
-            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-        }
+            .navbar-light .navbar-nav .nav-link {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
 
-        #ai-assistant .form-control:focus {
-            border-color: #80bdff;
-            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, .25);
-            outline: 0;
-        }
+            h1 {
+                font-size: 2rem;
+            }
 
-        #blurb-output {
-            min-height: 120px;
-            /* Ensure space for content or spinner */
-            display: flex;
-            /* Use flexbox for centering spinner/text */
-            align-items: center;
-            justify-content: center;
-            background-color: #e9ecef;
-            /* Light gray background */
-            border: 1px solid #dee2e6;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            text-align: center;
-            font-style: italic;
-            color: #6c757d;
+            h2 {
+                font-size: 1.6rem;
+            }
         }
-
-        #blurb-output.generated {
-            background-color: #d4edda;
-            /* Light green for success */
-            border-color: #c3e6cb;
-            color: #155724;
-            font-style: normal;
-        }
-
-        #blurb-output.error {
-            background-color: #f8d7da;
-            /* Light red for error */
-            border-color: #f5c6cb;
-            color: #721c24;
-            font-style: normal;
-        }
-
-         
     </style>
 </head>
 
@@ -279,7 +500,7 @@
                         <li class="nav-item"><a class="nav-link" href="#api-integration">API Integrations</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                         <!-- Link to the WAPH Course Page -->
-                        <li class="nav-item"><a class="nav-link" href="waph_course.html" target="_blank">WAPH Course</a>
+                        <li class="nav-item"><a class="nav-link" href="waph.html" target="_blank">WAPH Course</a>
                         </li>
                     </ul>
                 </div>
@@ -297,11 +518,11 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="card border-0">
+                                <div class="">
                                     <div class="container d-flex align-items-center justify-content-center py-4 ">
                                         <div class="row">
                                             <div class="col-12 text-center profile-container">
-                                                <img src="https://i.postimg.cc/FRsJ8Lch/Screenshot-61.png" alt="mannan"
+                                                <img src="https://i.postimg.cc/05m7hD5P/Whats-App-Image-2025-06-22-at-1-29-56-AM.jpg" alt="mannan"
                                                     class="profile-image">
                                             </div>
                                         </div>
@@ -327,7 +548,6 @@
         </section>
 
 
-
         <section id="aboutMe">
             <h2 class="">About Me</h2>
             <div class="row">
@@ -344,98 +564,79 @@
 
 
 
-        <section id="api-integration" class="p-4">
-            <h2 class="mb-4">Public API Integrations</h2>
-            <!-- <p class="api-disclaimer mx-auto" style="max-width: 800px;">
-                <i class="fas fa-info-circle me-2"></i>
-                **Disclaimer:** The content generated by these public/third-party services is provided by external
-                sources (JokeAPI, Numbers API), and I am not responsible for its accuracy, appropriateness, or
-                availability.
-            </p> -->
-            <!-- <div class="row mt-4 justify-content-center">
-                <div class="col-md-6 mb-4 mb-md-0">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title text-center mb-3"><i class="fas fa-laugh-squint me-2"></i> Joke of the
-                                Minute</h3>
-                            <blockquote class="blockquote text-center mb-0">
-                                <p class="mb-0 fs-5" id="jokeDisplay">Loading a fresh joke for you...</p>
-                                <footer class="blockquote-footer mt-2">Source: <cite title="JokeAPI">JokeAPI</cite>
-                                </footer>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title text-center mb-3"><i class="fas fa-calculator me-2"></i> Random Number
-                                Fact</h3>
-                            <div id="numberFactDisplay" class="text-center">
-                                <p>Loading an interesting fact...</p>
+        <section id="api-integration">
+            <h2 class="">Public API Integrations</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card apiCards">
+                        <div class="container py-4">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3 class=" mb-5"> Joke of the Minute</h3>
+                                    <p class="mb-0 fs-5" id="jokeDisplay">Loading a fresh joke for you...</p>
+                                    <p class="blockquote-footer mt-2">Source: <cite title="JokeAPI">JokeAPI</cite></p>
+                                </div>
+
                             </div>
-                            <footer class="blockquote-footer mt-2 text-center">Source: <cite
-                                    title="Numbers API">numbersapi.com</cite></footer>
                         </div>
                     </div>
                 </div>
-            </div> -->
+                <div class="col-lg-6">
+                    <div class="card apiCards">
+                        <div class="container py-4">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3 class=" mb-5"> Random Number
+                                        Fact</h3>
+                                    <div id="numberFactDisplay" class="text-center">
+                                        <p>Loading an interesting fact...</p>
+                                    </div>
+                                    <p class="blockquote-footer mt-2 text-center">Source: <cite
+                                            title="Numbers API">numbersapi.com</cite></p>
+                                </div>
 
-
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <h3 class="card-title text-center mb-3"><i class="fas fa-laugh-squint me-2"></i> Joke of the
-                                Minute</h3>
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <p class="mb-0 fs-5" id="jokeDisplay">Loading a fresh joke for you...</p>
-                            <footer class="blockquote-footer mt-2">Source: <cite title="JokeAPI">JokeAPI</cite>
-                            </footer>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <h3 class="card-title text-center mb-3"><i class="fas fa-calculator me-2"></i> Random Number
-                                Fact</h3>
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div id="numberFactDisplay" class="text-center">
-                                <p>Loading an interesting fact...</p>
                             </div>
-                            <footer class="blockquote-footer mt-2 text-center">Source: <cite
-                                    title="Numbers API">numbersapi.com</cite></footer>
                         </div>
                     </div>
                 </div>
-
             </div>
-
-
         </section>
+
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="row">
+                <div class="col-lg-8 col-md-10 col-sm-12">
+                    <div class="">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Development Intern</h5>
+                            <h6 class="card-subtitle mb-3 text-muted">NxtWave | December 2020</h6>
+                            <ul>
+                                <li>Assisted in designing and developing static and dynamic websites for clients.</li>
+                                <li>Gained hands-on experience with HTML5, CSS3, JavaScript, and jQuery.</li>
+                                <li>Helped implement SEO best practices and content management.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
 
         <!-- New AI Assistant Section -->
         <section id="ai-assistant" class="p-4">
-            <h2 class="mb-4 text-center"><i class="fas fa-robot me-2"></i>AI Assistant: Professional Blurb Generator
+            <h2 class="mb-4 ">AI Assistant: Professional Blurb Generator
             </h2>
-            <p class="lead text-center">Craft a compelling professional summary or elevator pitch for your profile using
+            <p class="lead ">Craft a compelling professional summary or elevator pitch for your profile using
                 AI!</p>
-            <p class="text-muted small text-center mb-3">
+            <p class="text-muted small  mb-3">
                 Tell me about your current role, key achievements, and what you're looking for (e.g., "Software
                 Developer, built scalable APIs, seeking full-time backend role").
                 The AI will generate a concise summary.
             </p>
             <div class="form-group mb-4">
-                <textarea class="form-control rounded-md" id="blurb-input" rows="4"+++++++++++
+                <textarea class="form-control rounded-md" id="blurb-input" rows="4" +++++++++++
                     placeholder="e.g., 'Junior web developer, built e-commerce site, looking for front-end internship'"></textarea>
             </div>
             <div class="text-center">
@@ -458,18 +659,44 @@
             </p>
         </section>
 
-        <section id="experience" class="p-4">
-            <h2 class="mb-4 text-center">Experience</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Web Development Intern</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">NxtWave | December 2020</h6>
-                            <ul>
-                                <li>Assisted in designing and developing static and dynamic websites for clients.</li>
-                                <li>Gained hands-on experience with HTML5, CSS3, JavaScript, and jQuery.</li>
-                                <li>Helped implement SEO best practices and content management.</li>
+
+
+        <section id="skills">
+            <h2 class="mb-4">Skills</h2>
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-md-4">
+                        <div class="skill-card border-start border-4 border-primary ps-3">
+                            <h4 class="mb-3"><i class="fas fa-code me-2 text-primary"></i>Programming Languages</h4>
+                            <ul class="list-unstyled mb-0">
+                                <li>Python</li>
+                                <li>JavaScript</li>
+                                <li>Java</li>
+                                <li>C</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="skill-card border-start border-4 border-success ps-3">
+                            <h4 class="mb-3"><i class="fas fa-cubes me-2 text-success"></i>Frameworks & Libraries</h4>
+                            <ul class="list-unstyled mb-0">
+                                <li>React.js</li>
+                                <li>Node.js / Express.js</li>
+                                <li>Django / Flask</li>
+                                <li>jQuery</li>
+                                <li>Bootstrap</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="skill-card border-start border-4 border-warning ps-3">
+                            <h4 class="mb-3"><i class="fas fa-tools me-2 text-warning"></i>Tools & Technologies</h4>
+                            <ul class="list-unstyled mb-0">
+                                <li>Git / GitHub</li>
+                                <li>Docker</li>
+                                <li>SQL</li>
+                                <li>RESTful APIs</li>
+                                <li>AWS</li>
                             </ul>
                         </div>
                     </div>
@@ -477,46 +704,6 @@
             </div>
         </section>
 
-        <section id="skills" class="p-4">
-            <h2 class="mb-4 text-center">Skills</h2>
-            <div class="row justify-content-center text-center">
-                <div class="col-md-4 mb-3">
-                    <div class="card p-3 h-100">
-                        <h4 class="card-title mb-3"><i class="fas fa-code me-2"></i> Programming Languages</h4>
-                        <ul class="list-unstyled">
-                            <li>Python</li>
-                            <li>JavaScript</li>
-                            <li>Java</li>
-                            <li>C</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card p-3 h-100">
-                        <h4 class="card-title mb-3"><i class="fas fa-cubes me-2"></i> Frameworks & Libraries</h4>
-                        <ul class="list-unstyled">
-                            <li>React.js</li>
-                            <li>Node.js / Express.js</li>
-                            <li>Django / Flask</li>
-                            <li>jQuery</li>
-                            <li>Bootstrap</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card p-3 h-100">
-                        <h4 class="card-title mb-3"><i class="fas fa-tools me-2"></i> Tools & Technologies</h4>
-                        <ul class="list-unstyled">
-                            <li>Git / GitHub</li>
-                            <li>Docker</li>
-                            <li>SQL</li>
-                            <li>RESTful APIs</li>
-                            <li>AWS</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <section id="clocks" class="p-4">
             <div class="row justify-content-center align-items-center">
@@ -533,34 +720,81 @@
                     <h3 class="mb-3">Digital Clock</h3>
                     <div id="digitalClock" class="mx-auto"></div>
                 </div>
+                
 
             </div>
         </section>
 
-        <section id="contact" class="p-4 text-center">
-            <h2 class="mb-4">Get In Touch</h2>
-            <p class="lead">Feel free to connect with me!</p>
-            <p>
-                <a href="mailto:gampas4@udayton.edu" class="icon-link"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/saisohan/" target="_blank" class="icon-link"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/saisohan8" target="_blank" class="icon-link"><i
-                        class="fab fa-github"></i></a>
-            </p>
-            <p class="mt-4">
-                <small class="text-muted">You can also find my resume <a
-                        href="https://drive.google.com/file/d/1w4NKC7PNckg6mSGB_VnD2wgzjJzPjAhP/view?usp=sharing"
-                        target="_blank">here</a>.</small>
-            </p>
 
-            <div class="text-center mt-4">
-                <button id="toggleEmail" class="btn btn-outline-primary btn-lg rounded-pill px-4">
-                    <i class="fas fa-envelope me-2"></i> Show/Hide My Email
+
+
+        <!-- <section class="footer text-center py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4">Get In Touch</h2>
+
+                <button id="toggleEmail" class="btn btn-outline-primary mb-3">
+                    Show/Hide My Email
                 </button>
-                <span id="myEmail" class="ms-3 fs-5" style="display: none;">gampas4@udayton.edu</span>
-            </div>
 
+                <p id="myEmail" class="ms-3 fs-5" style="display: none;">syeda45@udayton.edu</p>
+
+                <p class="mb-0 fs-5">📞 +1 (937) 241-3432</p>
+
+
+                <div class="social-icons mt-3">
+                    <a href="mailto:syeda45@udayton.edu" class="btn btn-outline-secondary me-2">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/abdul-mannan-syed-1a9a7b303/" target="_blank"
+                        class="btn btn-outline-secondary me-2">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Syedmannan22" target="_blank" class="btn btn-outline-secondary">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </section> -->
+
+
+
+        <section class="footer py-5">
+            <div class="container">
+                <div class="row align-items-center text-center text-md-start">
+
+                    <!-- Contact Info -->
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <h2 class="mb-3">Let's Connect</h2>
+                        <button id="toggleEmail" class="footer-button mb-3">
+                            Show/Hide My Email
+                        </button>
+                        <p id="myEmail" class="ms-3 fs-5" style="display: none;">syeda45@udayton.edu</p>
+                        <p class="mb-0 fs-5">
+                            <i class="fas fa-phone me-2"></i> +1 (937) 241-3432
+                        </p>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="col-md-6 text-md-end">
+                        <h5 class="mb-3">Follow Me</h5>
+                        <a href="mailto:syeda45@udayton.edu" class="btn btn-outline-secondary me-2">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/abdul-mannan-syed-1a9a7b303/" target="_blank"
+                            class="btn btn-outline-secondary me-2">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Syedmannan22" target="_blank" class="btn btn-outline-secondary">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
         </section>
+
+
+
 
     </section><!-- End of Main Content Container -->
 
@@ -570,7 +804,7 @@
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4 rounded-top-4">
         <div class="container">
-            <p class="mb-1">&copy; 2025 Sai Sohan. All rights reserved.</p>
+            <p class="mb-1">&copy; 2025 syed mannan All rights reserved.</p>
             <p class="mb-1">Built with passion and a lot of JavaScript!</p>
             <!-- Page Tracker Placeholder: THIS IS WHERE YOU SHOULD INSERT YOUR FlagCounter.com CODE -->
             <div class="footer-tracker">
@@ -736,17 +970,17 @@
                     apiUrl = `http://numbersapi.com/${randomNumber}/${factType}`;
                 }
 
-                $.ajax({
-                    url: apiUrl,
-                    method: 'GET',
-                    success: function (data) {
-                        numberFactDisplay.html(`<p class="mb-0 fs-5">${data}</p>`);
-                    },
-                    error: function (jqXHR, textStatus, errorThrown) {
-                        console.error('Error fetching number fact:', jqXHR);
-                        numberFactDisplay.html('<p class="text-danger">Failed to load a number fact. Please try again later.</p>');
-                    }
-                });
+               $.ajax({
+    url: 'https://uselessfacts.jsph.pl/api/v2/facts/random?language=en',
+    method: 'GET',
+    success: function (data) {
+        numberFactDisplay.html(`<p class="mb-0 fs-5">${data.text}</p>`);
+    },
+    error: function () {
+        numberFactDisplay.html('<p class="text-danger">Failed to load a fact. Please try again later.</p>');
+    }
+});
+
             }
             fetchNumberFact(); // Fetch a fact immediately on page load
 
