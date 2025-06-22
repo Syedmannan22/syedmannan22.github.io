@@ -403,16 +403,15 @@
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <h3 class="card-title text-center mb-3"><i class="fas fa-calculator me-2"></i> Random Number
-                                Fact</h3>
+                            <h3 class="card-title text-center mb-3"><i class="fas fa-calculator me-2"></i> Quote of the Day</h3>
                         </button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div id="numberFactDisplay" class="text-center">
-                                <p>Quote of the Day</p>
+                                <p id="joke-box">Loading joke...</p>
                             </div>
-                            <p id="joke-box">Loading joke...</p>
+                           
                             <footer class="blockquote-footer mt-2 text-center">Source: <cite
                                     title="Numbers API">numbersapi.com</cite></footer>
                         </div>
@@ -886,17 +885,6 @@
                 }
             }
         }); // End of document.ready
-
-          window.onload = function () {
-    setInterval(() => {
-      document.getElementById('digit-clock').innerHTML = new Date().toLocaleString();
-    }, 1000);
-
-    fetch("https://v2.jokeapi.dev/joke/Any?type=single")
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("joke-box").innerText = data.joke;
-      });
     </script>
 </body>
 
