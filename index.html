@@ -410,12 +410,14 @@
                     <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div id="numberFactDisplay" class="text-center">
-                                <p>Loading an interesting fact...</p>
+                                <p>Quote of the Day</p>
                             </div>
+                            <p id="joke-box">Loading joke...</p>
                             <footer class="blockquote-footer mt-2 text-center">Source: <cite
                                     title="Numbers API">numbersapi.com</cite></footer>
                         </div>
                     </div>
+
                 </div>
 
             </div>
@@ -884,6 +886,17 @@
                 }
             }
         }); // End of document.ready
+
+          window.onload = function () {
+    setInterval(() => {
+      document.getElementById('digit-clock').innerHTML = new Date().toLocaleString();
+    }, 1000);
+
+    fetch("https://v2.jokeapi.dev/joke/Any?type=single")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("joke-box").innerText = data.joke;
+      });
     </script>
 </body>
 
