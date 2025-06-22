@@ -441,8 +441,20 @@
             }
 
             #digitalClock {
-                font-size: 2.4rem;
-            }
+            font-family: 'Share Tech Mono', monospace;
+            /* Monospace font for digital clock */
+            font-size: 2.5rem;
+            padding: 20px;
+            background-color: #415161;
+            color: #ffffff;
+            /* Greenish display */
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            letter-spacing: 2px;
+            margin-top: 1rem;
+        }
+
         }
 
         @media (max-width: 576px) {
@@ -708,6 +720,7 @@
                     <h3 class="mb-3">Digital Clock</h3>
                     <div id="digitalClock" class="mx-auto"></div>
                 </div>
+                
 
             </div>
         </section>
