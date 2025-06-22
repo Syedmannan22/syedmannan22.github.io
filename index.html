@@ -886,6 +886,15 @@
       const time = `${hours}:${minutes}:${seconds}`;
       document.getElementById('digitalClock').textContent = time;
     }
+ // --- Digital Clock Functionality ---
+            // function updateDigitalClock() {
+            //     const now = new Date();
+            //     const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            //     $('#digitalClock').text(now.toLocaleTimeString('en-US', options));
+            // }
+            setInterval(updateDigitalClock, 1000); // Update every second
+            updateDigitalClock(); // Initial call to display immediately
+
 
 
             // --- Analog Clock Functionality ---
