@@ -365,7 +365,7 @@
             text-align: center;
             letter-spacing: 2px;
             margin-top: 1rem;
-        } !important
+        } 
 
         /* Contact Section */
         #contact p.lead {
@@ -877,13 +877,23 @@
 
 
             // --- Digital Clock Functionality ---
-            function updateDigitalClock() {
-                const now = new Date();
-                const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-                $('#digitalClock').text(now.toLocaleTimeString('en-US', options));
-            }
-            setInterval(updateDigitalClock, 1000); // Update every second
-            updateDigitalClock(); // Initial call to display immediately
+            //  function updateDigitalClock() {
+            //     const now = new Date();
+            //     const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            //     $('#digitalClock').text(now.toLocaleTimeString('en-US', options));
+            // }
+            // setInterval(updateDigitalClock, 1000); // Update every second
+            // updateDigitalClock(); // Initial call to display immediately 
+
+
+            function updateClock() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      const time = `${hours}:${minutes}:${seconds}`;
+      document.getElementById('digitalClock').textContent = time;
+    }
 
 
             // --- Analog Clock Functionality ---
