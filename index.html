@@ -253,15 +253,7 @@
             color: #721c24;
             font-style: normal;
         }
-#quote-box {
-  font-size: 1.1rem;
-  color: #444;
-}
 
-#quote-author {
-  font-size: 0.95rem;
-  color: #555;
-}
          
     </style>
 </head>
@@ -377,7 +369,8 @@
                 <div class="col-md-6">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h3 class="card-title text-center mb-3"><i class="fas fa-calculator me-2"></i> hello hello</h3>
+                            <h3 class="card-title text-center mb-3"><i class="fas fa-calculator me-2"></i> Random Number
+                                Fact</h3>
                             <div id="numberFactDisplay" class="text-center">
                                 <p>Loading an interesting fact...</p>
                             </div>
@@ -386,14 +379,6 @@
                         </div>
                     </div>
                 </div>
-
-            <div class="col-md-6">
-              <div class="card joke">
-                <h5>💬 Quote of the Day</h5>
-                <p id="quote-box" class="fst-italic">Fetching quote...</p>
-                <p id="quote-author" class="fw-bold text-end"></p>
-              </div>
-            </div>
             </div> -->
 
 
@@ -583,7 +568,7 @@
     <button id="backToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4 rounded-top-4">
+     <footer class="bg-dark text-white text-center py-4 rounded-top-4">
         <div class="container">
             <p class="mb-1">&copy; 2025 Syed Mannan. All rights reserved.</p>
             <p class="mb-1">Built with passion and a lot of JavaScript!</p>
@@ -729,40 +714,33 @@
             /**
              * Fetches a random fact from Numbers API and displays it.
              */
-            function fetchNumberFact() {
-                const numberFactDisplay = $('#numberFactDisplay');
-                numberFactDisplay.html('<p>Loading an interesting fact...</p>'); // Show loading message
+           // --- Graphics API Integration (Numbers API Example) ---
+/**
+ * Fetches a random fact from Numbers API and displays it.
+ * Uses corsproxy.io to bypass CORS and HTTP/HTTPS mismatch.
+ */
+function fetchNumberFact() {
+    const numberFactDisplay = $('#numberFactDisplay');
+    numberFactDisplay.html('<p>Loading an interesting fact...</p>');
 
-                // Get current month and day for a date fact, or a random number
-                const today = new Date();
-                const month = today.getMonth() + 1; // getMonth() is 0-indexed
-                const day = today.getDate();
+    const factType = 'trivia'; // or 'date', 'math', 'year'
+    const randomNumber = Math.floor(Math.random() * 1000); // Random number fact
 
-                // You can choose different types of facts: 'trivia', 'math', 'date', 'year'
-                // For a dynamic professional profile, a 'date' fact about today might be interesting
-                // or a 'random' trivia fact. Let's do a random trivia fact.
-                const factType = 'trivia'; // or 'date', 'math', 'year'
-                const randomNumber = Math.floor(Math.random() * 1000); // Fact about a random number up to 1000
+    const apiUrl = `https://corsproxy.io/?https://numbersapi.com/${randomNumber}/${factType}`;
 
-                let apiUrl;
-                if (factType === 'date') {
-                    apiUrl = `http://numbersapi.com/${month}/${day}/${factType}`;
-                } else {
-                    apiUrl = `http://numbersapi.com/${randomNumber}/${factType}`;
-                }
+    $.ajax({
+        url: apiUrl,
+        method: 'GET',
+        success: function (data) {
+            numberFactDisplay.html(`<p class="mb-0 fs-5">${data}</p>`);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error('Error fetching number fact:', jqXHR);
+            numberFactDisplay.html('<p class="text-danger">Failed to load a number fact. Please try again later.</p>');
+        }
+    });
+}
 
-                $.ajax({
-                    url: apiUrl,
-                    method: 'GET',
-                    success: function (data) {
-                        numberFactDisplay.html(`<p class="mb-0 fs-5">${data}</p>`);
-                    },
-                    error: function (jqXHR, textStatus, errorThrown) {
-                        console.error('Error fetching number fact:', jqXHR);
-                        numberFactDisplay.html('<p class="text-danger">Failed to load a number fact. Please try again later.</p>');
-                    }
-                });
-            }
             fetchNumberFact(); // Fetch a fact immediately on page load
 
 
@@ -899,22 +877,6 @@
                 }
             }
         }); // End of document.ready
-
-        function fetchQuote() {
-  fetch("https://api.quotable.io/random")
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById("quote-box").innerText = `"${data.content}"`;
-      document.getElementById("quote-author").innerText = `– ${data.author}`;
-    })
-    .catch(() => {
-      document.getElementById("quote-box").innerText = "Unable to load quote.";
-      document.getElementById("quote-author").innerText = "";
-    });
-}
-
-fetchQuote(); // On load
-setInterval(fetchQuote, 60000); // Refresh every minute
     </script>
 </body>
 
