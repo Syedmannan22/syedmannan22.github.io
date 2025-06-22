@@ -728,11 +728,15 @@ function fetchNumberFact() {
 
     const apiUrl = `https://corsproxy.io/?https://numbersapi.com/${randomNumber}/${factType}`;
 
-    $.ajax({
-        url: apiUrl,
+   $.ajax({
+        url: `https://numbers-1.p.rapidapi.com/${number}/trivia?json=true`,
         method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'YOUR_RAPIDAPI_KEY', // 🔁 REPLACE THIS
+            'X-RapidAPI-Host': 'numbers-1.p.rapidapi.com'
+        },
         success: function (data) {
-            numberFactDisplay.html(`<p class="mb-0 fs-5">${data}</p>`);
+            numberFactDisplay.html(`<p class="mb-0 fs-5">${data.text}</p>`);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.error('Error fetching number fact:', jqXHR);
