@@ -723,24 +723,15 @@ function fetchNumberFact() {
     const numberFactDisplay = $('#numberFactDisplay');
     numberFactDisplay.html('<p>Loading an interesting fact...</p>');
 
-    const factType = 'trivia'; // or 'date', 'math', 'year'
-    const randomNumber = Math.floor(Math.random() * 1000); // Random number fact
-
-    const apiUrl = `https://corsproxy.io/?https://numbersapi.com/${randomNumber}/${factType}`;
-
-   $.ajax({
-        url: `https://numbers-1.p.rapidapi.com/${number}/trivia?json=true`,
+    $.ajax({
+        url: 'https://uselessfacts.jsph.pl/api/v2/facts/random?language=en',
         method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': 'YOUR_RAPIDAPI_KEY', // 🔁 REPLACE THIS
-            'X-RapidAPI-Host': 'numbers-1.p.rapidapi.com'
-        },
         success: function (data) {
             numberFactDisplay.html(`<p class="mb-0 fs-5">${data.text}</p>`);
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            console.error('Error fetching number fact:', jqXHR);
-            numberFactDisplay.html('<p class="text-danger">Failed to load a number fact. Please try again later.</p>');
+            console.error('Error fetching fact:', jqXHR);
+            numberFactDisplay.html('<p class="text-danger">Failed to load a fact. Please try again later.</p>');
         }
     });
 }
