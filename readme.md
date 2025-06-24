@@ -49,11 +49,11 @@ The project is deployed on GitHub Pages and includes API integrations, cookie-ba
 
 ### 6. Public API Integrations
 - **Joke API**: Displays a random joke every 1 minute using `https://v2.jokeapi.dev/`.
-- **NASA APOD API**: Fetches the Astronomy Picture of the Day with title and explanation.
+- **Random Number Fact**: The Random Number Fact API provides quirky or interesting trivia about any number you request, like math facts, historical events, or random fun facts..
 - Added a disclaimer noting the content comes from third-party APIs.
 
-### 7. Weather API
-- Integrated WeatherAPI to detect the user's city and display real-time weather.
+### 7. AI Assistant: Professional Blurb Generator
+- An AI-powered tool that instantly crafts compelling, personalized professional summaries or bios for resumes, LinkedIn profiles, websites, and more.
 
 ### 8. Cookie-based Visitor Tracking
 - Implemented a JavaScript cookie to check if the visitor is new or returning.
