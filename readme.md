@@ -76,7 +76,6 @@ The project is deployed on GitHub Pages and includes API integrations, cookie-ba
 **EMmail Inspector** Showing email.
 
 ![api](images/api.png)  
-**NASA Image** loaded with its description along with Visitor Message.
-
+**Digital and Analog Clocks** Implemented a digital clock with JavaScript that updates every second.
 ![waph page](images/waph.png)  
  **Course Page (`waph.html`)**
